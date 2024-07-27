@@ -11,11 +11,10 @@
 
   outputs = { self, nixpkgs, home-manager, ...}: {
 
-    packages.x86_64-linux.hello = nixpkgs.legacyPackages.x86_64-linux.hello;
-    packages.x86_64-linux.default = self.packages.x86_64-linux.hello;
+    defaultPackage.x86_64-linux = home-manager.defaultPackage.x86_64-linux;
 
     homeConfigurations = {
-        "mrupnik" = home-manager.lib.homeManagerConfiguration {
+        "default" = home-manager.lib.homeManagerConfiguration {
 
             pkgs = import nixpkgs { system = "x86_64-linux"; };
 
