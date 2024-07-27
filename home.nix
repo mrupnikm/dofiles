@@ -48,7 +48,7 @@
 
     programs.git = {
         enable = true;
-        userEmail = "matic.rupnik@marand.si";
+        userEmail = "matic.rupnik@x.si";
         userName = "Matic Rupnik";
     };
 
