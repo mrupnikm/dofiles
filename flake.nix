@@ -14,7 +14,7 @@
     defaultPackage.x86_64-linux = home-manager.defaultPackage.x86_64-linux;
 
     homeConfigurations = {
-        "default" = home-manager.lib.homeManagerConfiguration {
+        "mrupnik" = home-manager.lib.homeManagerConfiguration {
 
             pkgs = import nixpkgs { system = "x86_64-linux"; };
 
