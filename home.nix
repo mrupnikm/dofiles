@@ -57,10 +57,10 @@
     home.packages = [
         pkgs.lazygit
         pkgs.lazydocker
-        #pkgs.lens
-        #pkgs.jetbrains.idea-ultimate
+        pkgs.lens
+        pkgs.jetbrains.idea-ultimate
 
-        #pkgs.spotify
+        pkgs.spotify
         pkgs.freetube
 
         pkgs.brave
@@ -68,7 +68,7 @@
         pkgs.chromium
 
         pkgs.ollama
-
+        pkgs.nerdfonts
     ];
 
 }
