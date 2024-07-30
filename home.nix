@@ -3,25 +3,25 @@
     home.homeDirectory = "/home/mrupnik";
     home.stateVersion = "24.05";
     programs.home-manager.enable = true;
-
-    # for unfree software licences(?)
+    
+    fonts.fontconfig.enable = true;    
 
     # enable zsh
     programs.zsh = {
-    enable = true;
+        enable = true;
         enableCompletion = true;
         autosuggestion.enable = true;
         syntaxHighlighting.enable = true;
 
         shellAliases = {
           ll = "ls -l";
-          update = "sudo nixos-rebuild switch --flake";
+          update = "nix run . -- switch --flake";
           lg = "lazygit";
           ld = "lazydocker";
         };
         oh-my-zsh = {
           enable = true;
-          plugins = [ "git" "thefuck" "docker" "kubectl" "sudo" "starship" "zoxide"];
+          plugins = [ "git" "thefuck" "docker" "kubectl" "sudo" "zoxide"];
           theme = "robbyrussell";
         };
         history = {
@@ -33,18 +33,23 @@
     # zsh binaries for plugins
     programs.atuin.enable = true;
     programs.atuin.enableZshIntegration = true;
-    programs.starship.enable = true;
-    programs.starship.enableZshIntegration = true;
     programs.zoxide.enable = true;
     programs.zoxide.enableZshIntegration = true;
     programs.thefuck.enable = true;
     programs.thefuck.enableZshIntegration = true;
+
+    programs.oh-my-posh = {
+      enable = true;
+      useTheme = "atomic";
+      enableZshIntegration = true;
+    };
 
     programs.neovim.enable = true;
     xdg.configFile."nvim" = {
         source = ./lazyvim;
         recursive = true;
     };
+    programs.fzf.enable = true;
 
     programs.git = {
         enable = true;
@@ -53,6 +58,7 @@
     };
 
     programs.k9s.enable = true;
+    programs.ripgrep.enable = true;
 
     home.packages = [
         pkgs.lazygit
@@ -68,6 +74,10 @@
         pkgs.chromium
 
         pkgs.ollama
+
+        pkgs.fira
+        pkgs.fira-code
+        pkgs.fira-code-symbols
         pkgs.nerdfonts
     ];
 
