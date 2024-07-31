@@ -61,6 +61,9 @@
     programs.ripgrep.enable = true;
 
     home.packages = [
+        pkgs.nh
+        pkgs.nix-output-monitor
+
         pkgs.lazygit
         pkgs.lazydocker
         pkgs.lens
