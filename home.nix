@@ -74,6 +74,8 @@
         pkgs.chromium
 
         pkgs.ollama
+        
+        pkgs.junction
 
         pkgs.fira
         pkgs.fira-code
