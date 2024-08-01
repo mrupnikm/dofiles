@@ -69,6 +69,9 @@
         pkgs.lens
         pkgs.jetbrains.idea-ultimate
 
+        pkgs.minio-client
+
+
         pkgs.spotify
         pkgs.freetube
 
